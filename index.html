@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Signup Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <img src="images/logo.png" alt="" />
+        <p class="desc">Find 3D Objects, Mockups and Illustration here.</p>
+        <img src="images/abstraction.png" alt="" class="illustration" />
+      </div>
+      <div class="right">
+        <div class="wrapper">
+          <h1 class="heading">Create Account</h1>
+          <div class="social-login">
+            <a href="#" class="google">
+              <img src="images/google.png" alt="" />
+              <span>Sign up with Google</span>
+            </a>
+            <a href="#" class="facebook">
+              <img src="images/facebook.png" alt="" />
+              <span>Sign up with Facebook</span>
+            </a>
+          </div>
+          <div class="or">- OR -</div>
+          <form action="#" class="form">
+            <div class="input-group">
+              <input type="text" id="name" class="" />
+              <label for="name">Full Name</label>
+            </div>
+            <div class="input-group">
+              <input type="email" id="email" />
+              <label for="email">Email</label>
+            </div>
+            <div class="input-group">
+              <input type="password" id="password" />
+              <label for="password">Password</label>
+              <img src="images/eye.svg" alt="" class="eye" />
+              <img
+                src="images/close-eye.svg"
+                alt=""
+                class="close-eye"
+                style="display: none"
+              />
+            </div>
+            <button class="btn">Create Account</button>
+            <p class="bottom-text">
+              Already have an account?
+              <a href="#">Log in</a>
+            </p>
+          </form>
+        </div>
+      </div>
+      <div class="credits">
+        Designed by
+        <a
+          href="https://www.youtube.com/channel/UCiUtBDVaSmMGKxg1HYeK-BQ"
+          target="_blank"
+          >Open Source Coding</a
+        >
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const inputs = document.querySelectorAll(".input-group input");
+    inputs.forEach((input) => {
+      input.addEventListener("change", () => {
+        console.log(input.value);
+        if (input.value) {
+          input.classList.add("filled");
+        } else {
+          input.classList.remove("filled");
+        }
+      });
+    });
+
+    const password = document.getElementById("password");
+    const eye = document.querySelector(".eye");
+    const closeEye = document.querySelector(".close-eye");
+
+    eye.addEventListener("click", () => {
+      password.setAttribute("type", "text");
+      eye.style.display = "none";
+      closeEye.style.display = "block";
+    });
+
+    closeEye.addEventListener("click", () => {
+      password.setAttribute("type", "password");
+      closeEye.style.display = "none";
+      eye.style.display = "block";
+    });
+  </script>
+</html>
